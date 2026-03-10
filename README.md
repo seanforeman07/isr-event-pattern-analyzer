@@ -1,15 +1,15 @@
 # ISR Event Pattern Analyzer
 
-Python defense analytics project that detects ISR hotspot clusters and ranks priority areas from simulated event logs.
+Developed a Python analytics pipeline that identifies ISR event hotspots and ranks priority areas for analyst review using clustering and threat scoring.
 
 ## Mission Question
-Which geographic areas should be prioritized for analyst review based on event density, confidence, and threat level?
+Which geographic areas should analysts prioritize for review based on event density, confidence levels, and threat indicators?
 
 ## Technical Scope
-- Ingest ISR-style event data with timestamp and geospatial coordinates.
-- Detect hotspots with `DBSCAN` clustering.
-- Compute a weighted priority score by cluster.
-- Output ranked clusters for triage workflows.
+- Ingest ISR-style event data containing timestamps and geospatial coordinates.
+- Applied DBSCAN clustering to detect activity hotspots without requiring a predefined cluster count.
+- Calculated a weighted priority score using event density, confidence levels, and threat indicators.
+- Generated ranked cluster outputs supporting analyst triage workflows.
 
 ## Stack
 - Python 3.11+
@@ -42,10 +42,5 @@ Running tests prints:
 - `1 passed`
 
 ## Resume-Ready Impact
-- Built an ISR event triage pipeline to convert raw geospatial activity into ranked analyst priorities.
-- Combined clustering and weighted threat scoring to support faster, evidence-based review.
-
-## Interview Talking Points
-- Why `DBSCAN` was selected for unknown cluster counts and noisy geospatial data.
-- Tradeoffs in `eps`/`min_samples` and how those parameters change cluster sensitivity.
-- How to extend this baseline with time-window drift detection and map visualization.
+- Built an ISR event clustering pipeline converting geospatial activity logs into prioritized analyst review areas.
+- Combined density-based clustering and weighted threat scoring to support rapid triage of operational events.
